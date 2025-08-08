@@ -66,3 +66,44 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 30rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+.table-responsive {
+  margin-top: 1rem;
+}
+
+.actions a {
+  margin-left: 0.5rem;
+}
+
+.actions a:first-child {
+  margin-left: 0;
+}
+
+.actions button {
+  margin-left: 0.5rem;
+}
+
+.navbar {
+  background-color: #0d6efd;
+}
+
+.navbar a {
+  color: white;
+}
+
+.navbar button {
+  color: white;
+  background-color: red;
+}
+
+#navbarNav span {
+  color: yellow;
+}

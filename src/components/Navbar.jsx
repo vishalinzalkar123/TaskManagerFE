@@ -4,13 +4,11 @@ import { Link } from "react-router-dom"
 import { useAuth } from "../context/AuthContext"
 export default function Navbar() {
   const { user, logout, loading } = useAuth() // Access user from context
-  console.log("NAVBAR USER:", user)
-  console.log("NAVBAR LOADING:", loading)
 
   if (loading) return <div>Loading...</div> // Show loading state if needed
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/dashboard">
           MyApp
@@ -33,10 +31,21 @@ export default function Navbar() {
             </li>
             {user ? (
               <>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/projects">
+                    Projects
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/tasks">
+                    Tasks
+                  </Link>
+                </li>
                 <li className="nav-item d-flex align-items-center">
                   <span className="nav-link">{user.email}</span>
                 </li>
-                <li className="nav-item">
+
+                <li className="nav-item d-flex align-items-center">
                   <button
                     className="btn btn-outline-danger btn-sm ms-2"
                     onClick={logout}
